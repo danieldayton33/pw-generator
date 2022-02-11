@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PW Generator</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;700&display=swap" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="style.css" >
+    </head>
+    <body>
+        <main>
+            <h1>PW Generator</h1>
+            <div class="form-wrap">
+                <h2>Submit to Create a PW of your choosing</h2>
+                <form>
+                    <div class="range-slider">
+                        <label for="length">How long would you like your PW to be?</label>
+                        <input type="range" min="6" max="24" name="length" id="length">
+                        <div class="range-indicator"></div>
+                    </div>
+                    <div class="options">
+                        <div class="item">
+                            <label for="lower-case">Lower Case</label>
+                            <input type="checkbox" name="lower-case" id="lower-case" checked />
+                        </div>
+                       <div class="item">
+                           <label for="upper-case">Upper Case</label>
+                           <input type="checkbox" name="upper-case" id="upper-case" checked/>
+                       </div>
+                        <div class="item">
+                            <label for="numeric">Numeric</label>
+                            <input type="checkbox" name="numeric" id="numeric" checked/>
+                        </div>
+                        <div class="item">
+                            <label for="special-char">Special Characters</label>
+                            <input type="checkbox" name="special-char" id="special-char" checked/>
+                        </div>
+                    </div>
+                    <input type="submit" value="Generate Password">
+                </form>
+                <div id="pw">New Password</div>
+                <div id="message"></div>
+            </div>
+        </main>
+        <script type="application/javascript" src="main.js"></script>
+    </body>
+</html>
