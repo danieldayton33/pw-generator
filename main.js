@@ -8,6 +8,7 @@ const special = document.querySelector('#special-char');
 const pwDiv  = document.querySelector('#pw');
 const indicator = document.querySelector('.range-indicator');
 const message = document.querySelector('#message');
+// Set initial range value
 indicator.textContent = length.value;
 
 // Lower case string
@@ -24,7 +25,7 @@ const characters = {
 function filterCharacters (values) {
     const filteredKeys = Object.keys(values).filter((key) => values[key]);
     if(filteredKeys.length === 0) {
-        alert('You must select at character type');
+        alert('You must select at least one character type');
         return false;
     }
     const selectedChars = {};
@@ -57,20 +58,17 @@ function generatePW (length, selected) {
 // Event Listeners
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    const values = {
-        length: length.value,
-        options: {
+    const options = {
             lowerCase: lowerCase.checked,
             upperCase: upperCase.checked,
             numeric: numeric.checked,
             special: special.checked,
-        }
     }
     // get the filtered characters
-    const filterChars = filterCharacters(values.options);
+    const filterChars = filterCharacters(options);
     if(filterChars) {
         // now generate the pw
-        generatePW(parseInt(values.length), filterChars);
+        generatePW(parseInt(length.value), filterChars);
     }
 
 });
